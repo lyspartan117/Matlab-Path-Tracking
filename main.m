@@ -27,6 +27,7 @@ hold on;
 % 画出PID控制结果
 plot(r_x(1:i),r_y(1:i),'.',r_x(1:i),r_y(1:i),'r-');
 % 画出结果
+DrawResult(r_x(1:i),r_y(1:i),r_phi(1:i),r_delta_f(1:i),l,tt_x,tt_y);
 %% 正弦线
 % kp,ki,kd系数输入
 kp = 2;
@@ -52,7 +53,7 @@ hold on;
 [r_x,r_y,r_phi,r_delta_f,i] = PID_CET(k,init,target,0);
 % 画出PID控制结果
 plot(r_x(1:i),r_y(1:i),'.',r_x(1:i),r_y(1:i),'r-');
-
+DrawResult(r_x(1:i),r_y(1:i),r_phi(1:i),r_delta_f(1:i),l,tt_x,tt_y);
 %% 圆曲线
 % kp,ki,kd系数输入
 kp = 2;
@@ -83,3 +84,4 @@ hold on;
 [r_x,r_y,r_phi,r_delta_f,i] = PID_CET(k,init,target,0);
 % 画出PID控制结果
 plot(r_x(1:i),r_y(1:i),'.',r_x(1:i),r_y(1:i),'r-');
+DrawResult(r_x(1:i),r_y(1:i),r_phi(1:i),r_delta_f(1:i),l,tt_x,tt_y);
