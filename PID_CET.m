@@ -62,7 +62,7 @@ for i = 1:1:maxn
     end
     err_sum = err_sum + err_now;
     % 根据当前误差值更新控制量delta_f
-    delta_f(i + 1) = kp * err_now + kd * err_sum +ki * (err_now - err_pre);
+    delta_f(i + 1) = kp * err_now + ki * err_sum + kd * (err_now - err_pre);
     % 限制delta_f的大小，防止出现过大的情况
     if delta_f(i + 1) > pi / 6
         delta_f(i + 1) = pi / 6;

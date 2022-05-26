@@ -3,21 +3,21 @@ clc
 
 %% 直线
 % kp,ki,kd系数输入
-kp = 5;
-ki = 0.05;
+kp = 2;
+ki = 0;
 kd = 20;
-k = [kp,kd,ki];
+k = [kp,ki,kd];
 % 初始x,y和phi,l,v,dt信息
 x = 0;
 y = 0;
-phi = 0;
+phi = pi / 3;
 l = 2;
 v = 2;
 init = [x,y,phi,l,v];% 初始值
 dt = 0.1; % 最大时间间隔内距离v * dt
 % 目标一条直线取点
 tt_x = linspace(0,100,1000);
-tt_y = linspace(2,2,1000);
+tt_y = linspace(10,10,1000);
 target = {dt,tt_x,tt_y};
 % 画出目标曲线
 plot(tt_x,tt_y,'.',tt_x,tt_y,'b-');
@@ -26,13 +26,13 @@ hold on;
 [r_x,r_y,r_phi,r_delta_f,i] = PID_CET(k,init,target,0);
 % 画出PID控制结果
 plot(r_x(1:i),r_y(1:i),'.',r_x(1:i),r_y(1:i),'r-');
-
+% 画出结果
 %% 正弦线
 % kp,ki,kd系数输入
-kp = 5;
-ki = 0.05;
+kp = 2;
+ki = 0.025;
 kd = 20;
-k = [kp,kd,ki];
+k = [kp,ki,kd];
 % 初始x,y和phi,l,v,dt信息
 x = 0;
 y = 0;
@@ -58,7 +58,7 @@ plot(r_x(1:i),r_y(1:i),'.',r_x(1:i),r_y(1:i),'r-');
 kp = 2;
 ki = 0.0001;
 kd = 20;
-k = [kp,kd,ki];
+k = [kp,ki,kd];
 % 初始x,y和phi,l,v,dt信息
 x = 6;
 y = 0.1;
