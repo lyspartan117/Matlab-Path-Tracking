@@ -1,5 +1,5 @@
 function [error] = calcERR_CET(pos1,pos2,phi,pos3)
-%calcERR_CET CET模型下计算累计误差
+%calcERR_CET CET模型下计算横向误差
 %   输入pos2为目标点,pos1为当前点,均储存坐标x,y信息,再输入phi航偏角信息,pos1和pos2以向量形式输入
 %   pos3为pos2下一个点，用以判断pos1和直线的位置关系
 ld = pos2 - pos1;
