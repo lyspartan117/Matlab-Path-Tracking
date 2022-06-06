@@ -65,7 +65,7 @@ for i = 1:1:maxn
     delta_f(i + 1) = kp * err_now + ki * err_sum + kd * (err_now - err_pre);
     % 限制delta_f的大小，防止出现过大的情况
     if delta_f(i + 1) > pi / 6
-        delta_f(i + 1) = pi / 6;
+        delta_f(i + 1) =  pi / 6;
     elseif delta_f(i + 1) < -pi / 6
         delta_f(i + 1) = - pi / 6;
     end
